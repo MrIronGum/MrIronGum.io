@@ -1,0 +1,473 @@
+ /*color of headers text, global variable*/
+:root{
+    --mainColor: #eaeaea;
+    --secondaryColor: #fff;
+     
+    --borderColor: #c1c1c1;
+
+    --mainText: black;
+    --secondaryText: #4b5156;
+
+    --themeDotBorder:#24292e;
+
+    --previewBg:rgb(251, 249, 243, 0.8);
+    --previewShadow:#f0ead6;
+
+    --buttonColor:black;
+}
+
+hmtl, body {
+    padding: 0;
+    margin: 0;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body *{
+    transition: 0.3s;
+}
+
+/*google font(Russo) and variables(color), not so bold*/
+h1, h2, h3, h4, h5, h6, strong{
+    color: var(--mainText);
+    font-family: 'Russo One', sans-serif;
+    font-weight: 500;
+}
+
+/*google font(Roboto, 500) and variables(color)*/
+p, li, span, label, input, textarea{
+    color: var(--secondaryText);
+    font-family: 'Roboto Mono', monospace;
+}
+
+/*no underlines for links,color*/
+a{
+    text-decoration: none;
+    color: #17a2b8;
+}
+
+/*no bullets in list*/
+ul{
+    list-style: none;
+}
+
+/*Sizes of text*/
+h1 { font-size: 56px;}
+h2 { font-size: 36px;}
+h3 { font-size: 28px;}
+h4 { font-size: 24px;}
+h5 { font-size: 20px;}
+h6 { font-size: 16px;}
+
+
+/*classes s1&s2, with variables of colores and borders*/
+.s1 {
+    background-color: var(--mainColor);
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto;
+}
+
+.s2 {
+    background-color: var(--secondaryColor);
+    border-bottom: 1px solid var(--borderColor);
+    overflow: auto;
+}
+ 
+/*Make sure that items centered*/
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/*editing the wrapper greeting sentence*/
+.greeting-wrapper{
+    /*Creating grid area*/
+    display: grid;
+
+    /*Center content along x-axis*/
+    text-align: center;
+    
+    /*Center along y-axis*/
+    align-content: center;
+    
+    /*Creating a border*/
+    /*border: 2px dashed lightcoral;*/
+
+    /*Set the height*/
+    min-height: 10em;
+}
+
+/*Set container intro-wrapper*/
+.intro-wrapper{
+    background-color:var(--secondaryColor);
+    border: 1px solid var(--borderColor);
+    /*Set the border radius for tops*/
+    border-radius: 5px 5px 0 0;
+
+
+    /*Shadow for a box from Shadow generator*/
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+
+    /*Creating grid area*/
+    display: grid;
+
+    /*2 fractions for nav, right-left columns*/
+    grid-template-columns: 1fr 1fr;
+
+    /*temporary height
+      3 em for nav, 30 em for columns  
+    grid-template-rows: 3em 30em;*/ 
+
+    /*create new string - new row*/
+    grid-template-areas: 
+
+        /*align nav wrapper at the top*/
+        'nav-wrapper nav-wrapper'
+
+        /*put columns at the bottom, on the left and right*/
+        'left-column right-column'
+        ;
+}
+
+/*Border for container*/
+.nav-wrapper{
+    border-radius: 5px 5px 0 0;
+    /*identify grid area*/
+    grid-area: nav-wrapper;
+    /*Set bottom border for nav bar*/
+    border-bottom: 1px solid var(--borderColor);
+    /*Flexbox*/
+    display: flex;
+    /*spread on two sides */
+    justify-content: space-between;
+    /*space centered verticaly*/
+    align-items: center;
+    background-color: var(--mainColor);
+
+    /*Set the border
+    border: 1px dashed lightcoral;*/
+}
+
+#navigation a{
+    color: var(--mainText);
+}
+
+#navigation a:hover{
+    color: #bbbbbb;
+}
+
+/*creating space for links*/
+#navigation{
+    margin: 0;
+    padding: 10px;
+}
+
+/*inline nav */
+#navigation li{
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/*inline dots*/
+.dots-wrapper{
+    display: flex;
+    padding: 10px;
+}
+
+/*Creating dots on the left of nav*/
+.browser-dot{
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin: 5px;
+
+    /*Shadow Generator, shadows for dots*/
+    -webkit-box-shadow: 0px 2px 2px 1px rgba(136,136,136,0.34); 
+    box-shadow: 0px 2px 2px 1px rgba(136,136,136,0.34);
+    
+}
+
+/*styling colors of the dots*/
+#dot-1{
+    background-color: #FC6058 ;
+}
+
+#dot-2{
+    background-color: #fec02f ;
+}
+
+#dot-3{
+    background-color: #2ACA3E ;
+}
+
+.left-column{
+    grid-area: left-column;
+    padding-top:50px;
+    padding-bottom: 50px;
+  
+    /* border: 1px dashed lightcoral;*/
+}
+
+#profile_pic{
+    display: block;
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    /*crop the image*/
+    object-fit: cover;
+    border: 2px solid var(--borderColor);
+}
+
+#theme-options-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.theme-dot{
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+
+    margin: 5px;
+    border: 2px solid var(--themeDotBorder);
+
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    /*turns cursor to the pointer*/
+    cursor: pointer;
+
+}
+
+/*select elements when you mouse over them*/
+.theme-dot:hover{
+    border-width: 5px;
+}
+
+#light-mode{
+    background-color:#fff ;
+}
+
+#blue-mode{
+    background-color: #192734; ;
+}
+
+#green-mode{
+    background-color:#78866b;
+}
+
+#purple-mode{
+    background-color:#7E4C74;
+}
+
+.contact-link:hover{
+    color: #17a2b8;
+} 
+
+
+#settings-note{
+    /*editing text under the circles*/
+    font-size: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+.right-column{
+    grid-area: right-column;
+    display: grid;
+    align-content: center;
+    /*border: 1px dashed lightcoral;*/
+
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#preview-shadow{
+    background-color: var(--previewShadow);
+    width: 300px;
+    height: 180px;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+
+#preview{
+    width: 300px;
+    border: 1.5px solid #17a2b8;
+    background-color: var(--previewBg);
+    padding: 15px;
+    position: relative;
+}
+
+.corner{
+    /*creating dotes*/
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1.5px solid #17a2b8;
+    background-color: #fff;
+    position: absolute;
+}
+
+#corner-tl{
+    top: -5px;
+    left: -5px;
+}
+
+#corner-tr{
+    top: -5px;
+    right: -5px;
+}
+
+#corner-br{
+    bottom: -5px;
+    right: -5px;
+}
+
+#corner-bl{
+    bottom: -5px;
+    left: -5px;
+}
+
+.about-wrapper{
+    display: grid;
+    /*fit content if less than 320px stack it and if expand - expand it*/
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding-bottom: 50px;
+    padding-top: 50px;
+    gap:100px;
+}
+
+#skills{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--previewShadow);
+}
+
+.social_links{
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+
+#social_img{
+    width: 75%;
+}
+
+
+.post-wrapper{
+    display: grid;
+    /*fits as many as you can but never let it go below or above 320*/
+    grid-template-columns: repeat(auto-fit, 320px);
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.post{
+    border: 1px solid var(--borderColor);
+    -webkit-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+	box-shadow: -2px 7px 21px -9px rgba(0,0,0,0.75);
+}
+
+.thumbnail{
+    display: block;
+    width: 100%;
+    height:180px;
+    object-fit: cover;
+}
+
+.post-preview{
+    background-color: #fff;
+    padding: 15px;
+
+}
+
+.post-title{
+    color: black;
+    margin: 0;
+}
+
+.post-intro{
+    color: #4b5156;
+    font-size: 16px;
+}
+
+#contact-form{
+    display: block;
+    /*responsive if we change size*/
+    max-width: 600px;
+    /*center the form*/
+    margin: 0 auto;
+    border: 1px solid var(--borderColor);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--mainColor);
+    margin-bottom: 50px;
+}
+
+.input-field{
+    width: 100%;
+    padding-top: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 5px;
+    border: 1px solid var(--borderColor);
+    font-size: 14px;
+}
+
+#contact-form label{
+    /*contact form min height is 2.7em*/
+    line-height: 2.7em;
+}
+
+#contact-form textarea{
+    min-height: 100px;
+    font-size: 14px;
+}
+
+#submit-btn{
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #fff;
+    background-color: var(--buttonColor);
+    border: none;
+}
+
+/*adjusting width with the changing of screen size
+set value to main container*/
+@media screen and (max-width: 1200px){
+    .main-container{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .intro-wrapper{
+        /*2 fractions for nav, right-left columns*/
+        grid-template-columns: 1fr;
+        /*create new string - new row*/
+        grid-template-areas: 
+            /*align nav wrapper at the top*/
+            'nav-wrapper'
+            /*put columns at the bottom, on the left and right*/
+            'left-column'
+            'right-column'
+            ;
+    }
+
+    .right-column{
+        justify-content: center;
+    }
+
+
+}
